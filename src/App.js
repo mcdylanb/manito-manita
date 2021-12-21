@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, {useState} from 'react';
 function App() {
+    const initialParticipants=[
+      "Dylan","Kaitlyn", "Deion",
+    ];
+    const [parti, setParti] = useState(initialParticipants);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <ol>
+          {parti.map((parti) => {
+            return<li key={parti}>{parti}</li>;
+          })}
+
+        </ol>
+      </div>
   );
 }
 
